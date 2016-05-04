@@ -18,7 +18,7 @@ html{background:black;}
 	width:600px;
 	height:30px;
 	background-image:url(img/menù.png);
-	background-size:auto 20px;
+	background-size:100% 100px;
 }
 #corpo{
 	width:600px;
