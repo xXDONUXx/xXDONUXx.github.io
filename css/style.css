@@ -17,12 +17,12 @@ html{background:black;}
 #menu{
 	width:600px;
 	height:30px;
-	background:green;
+	background:transparent;
 }
 #corpo{
 	width:600px;
 	height:70%;
-	background:grey;
+	background:transparent;
 }
 #footer{
 	width:600px;
