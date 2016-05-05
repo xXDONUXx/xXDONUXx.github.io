@@ -1,13 +1,13 @@
 html{background:black;}
 #box{
-	width:600px;
+	width:1000px;
 	height:auto;
 	margin:0 auto;
 	background-image:url(img/background.jpg);
 	background-size:100%;
 }
 #top{
-	width:600px;
+	width:100%;
 	height:200px;
 	background-image:url(img/titolo.png);
 	background-size:auto 150px;
@@ -16,18 +16,18 @@ html{background:black;}
 	background-color:#696969;
 }
 #menu{
-	width:600px;
+	width:100%;
 	height:20px;
 	background-image:url(img/menù.png);
 	background-size:auto 20px;
 }
 #corpo{
-	width:600px;
+	width:100%;
 	height:70%;
 	background:transparent;
 }
 #footer{
-	width:600px;
+	width:100%;
 	height:100px;
 	background:transparent;
 }
