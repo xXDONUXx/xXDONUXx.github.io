@@ -66,6 +66,7 @@ a:visited{color:white; text-decoration:none;}
 
 #menu ul ul li a {
 	background-color:#C61D26;
+	width:240px;
 }
 
 #menu ul ul li a:hover {
