@@ -4,6 +4,108 @@
 		<link rel="stylesheet" href="css/style.css">
 	    <title>Assassin's Creed ITA</title>
 		  <meta charset="utf-8">
+  <meta name="generator" content="AlterVista - Editor HTML"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){     
+     slideshow(5,1000,5000);     
+    });
+    
+    /* Argomenti funzione: 
+       n -> il numero totale di foto
+       t1 -> il tempo in millisecondi di transizione
+       t2 -> il tempo in millisecondi di intervallo
+    */
+    function slideshow(n,t1,t2){
+     /* inizializzo le variabili e gli elementi */
+     var x = 0;
+     var txt = 0;
+     var stato = 1;
+     $("#foto2").animate({"opacity":"0"},0);
+     $("#foto2").animate({"left":"100%"},0);
+     $("#foto2").animate({"opacity":"1"},0);      
+     $("#foto1").attr("src",fotografie(x,n));
+     $("#slide p").html(scritte(txt,n));
+     x++;
+     $("#foto2").attr("src",fotografie(x,n));
+     
+     /* eseguo l'intervallo dello slide */
+     var intervallo = setInterval(function(){
+       x++;txt++;
+       if(x>n-1){x=0;}
+       if(txt>n-1){txt=0;}
+	   t1=1500;
+	   t2=3500;
+       stato = cambiaSlide(x,n,stato,t1,txt);
+     },t2);
+    }
+    
+   
+    /* Argomenti funzione: 
+       x -> la foto che si sta visualizzando 
+       n -> il numero totale di foto
+       stato -> la posizione dello slide
+       t -> il tempo in millisecondi di transizione
+       txt -> il testo che si sta visualizzando
+    */ 
+    function cambiaSlide(x,n,stato,t,txt){
+     if(stato==1){
+      var elemento1 = "#foto1";
+      var elemento2 = "#foto2";
+     }else{
+      var elemento1 = "#foto2";
+      var elemento2 = "#foto1";
+     }
+     $(elemento2).animate({"left":"0px"},t);
+     $(elemento1).animate({"left":"-100%"},t,function(){
+      $("#slide p").html(scritte(txt,n));
+      $(elemento1).animate({"opacity":"0"},0);
+      $(elemento1).animate({"left":"100%"},0);
+      $(elemento1).animate({"opacity":"1"},0,function(){
+        $(elemento1).attr("src",fotografie(x,n));        
+      });
+     });
+     
+     if(stato==1){stato=0;}else{stato=1;}
+     return stato;
+    }
+    
+    
+    /*
+       Argomenti funzione:
+       x -> la foto che si sta visualizzando
+       n -> il numero totale di foto
+    */
+    function fotografie(x,n){
+     var foto = new Array(n);
+     /* scrivere il path ed il nome delle foto che volere usare */
+     foto[0] = "img/lamacelataac1.png";
+     foto[1] = "foto/2.jpg";
+     foto[2] = "foto/3.jpg";
+     foto[3] = "foto/4.jpg";
+     foto[4] = "foto/5.jpg";
+     
+     return foto[x];
+    }
+    
+    /*
+       Argomenti funzione:
+       x -> la foto che si sta visualizzando
+       n -> il numero totale di foto
+    */
+    function scritte(x,n){
+     var testi = new Array(n);
+     /* scrivere il testo che vuoi far apparire sulle foto */
+     testi[0] = "testo1";
+     testi[1] = "testo2";
+     testi[2] = "testo3";
+     testi[3] = "testo4";
+     testi[4] = "testo5";
+     
+     return testi[x];
+    }
+    
+  </script>
 	</head>
 	
 	<body>
@@ -51,6 +153,11 @@
 								<br>Il gameplay è basato sul concetto di open world, con molti elementi tratti dal parkour. La trama, che viene narrata attraverso salti temporali di varie epoche, vede la lotta tra l'Ordine Templare, un gruppo che ha come obiettivo il totale controllo sulla vita degli uomini per dar loro uno scopo e guidarli alla vera pace, e la Confraternita degli Assassini, un'altra fazione che invece vuole migliorare il mondo ispirando la giustizia ed eliminando i tiranni.
 								<br>
 								<br>Il principale protagonista della serie fino al terzo capitolo della saga è Desmond Miles, un barista venticinquenne di Manhattan, fuggito a 16 anni da un rifugio di Assassini chiamato "La Fattoria" perché incapace di comprendere il vero scopo dei suoi estenuanti allenamenti e stanco dell'iperprotettività dei suoi genitori che lo mettevano in guardia da un nemico che lui non aveva mai visto. Egli, a causa di una multinazionale nota come Abstergo, si ritroverà a rivivere le memorie dei suoi antenati grazie ad uno speciale dispositivo chiamato Animus per trovare dei manufatti misteriosi chiamati Frutti dell'Eden, i quali sembrano essere dotati di straordinari poteri. Inizialmente costretto dai Templari, successivamente li cercherà volontariamente assieme agli Assassini in una corsa contro il tempo per salvare il mondo da un'immane catastrofe.</div>
+			</div>
+			<div id="slide">
+			<img id="foto1" src="" />
+			<img id="foto2" src="" />
+			<p></p>
 			</div>
 			<div id="footer"></div>
 		</div>
