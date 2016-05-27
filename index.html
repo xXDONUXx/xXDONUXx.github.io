@@ -8,7 +8,7 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script>
     $(document).ready(function(){     
-     slideshow(5,1000,5000);     
+     slideshow(12,1000,5000);     
     });
     
     /* Argomenti funzione: 
@@ -34,8 +34,8 @@
        x++;txt++;
        if(x>n-1){x=0;}
        if(txt>n-1){txt=0;}
-	   t1=1500;
-	   t2=3500;
+	   t1=1000;
+	   t2=4000;
        stato = cambiaSlide(x,n,stato,t1,txt);
      },t2);
     }
@@ -79,12 +79,18 @@
     function fotografie(x,n){
      var foto = new Array(n);
      /* scrivere il path ed il nome delle foto che volere usare */
-     foto[0] = "img/lamacelataac1.png";
-     foto[1] = "foto/2.jpg";
-     foto[2] = "foto/3.jpg";
-     foto[3] = "foto/4.jpg";
-     foto[4] = "foto/5.jpg";
-     
+     foto[0] = "img/ac_1.jpg";
+     foto[1] = "img/ac_2.jpeg";
+     foto[2] = "img/ac_3.jpg";
+     foto[3] = "img/ac_4.jpg";
+     foto[4] = "img/ac_5.jpg";
+     foto[5] = "img/ac_6.jpg";
+	 foto[6] = "img/ac_7.jpg";
+	 foto[7] = "img/ac_8.jpg";
+	 foto[8] = "img/ac_9.jpg";
+	 foto[9] = "img/ac_10.jpg";
+	 foto[10] = "img/ac_11.jpg";
+	 foto[11] = "img/ac_12.jpg";
      return foto[x];
     }
     
@@ -101,7 +107,7 @@
      testi[2] = "testo3";
      testi[3] = "testo4";
      testi[4] = "testo5";
-     
+     testi[5] = "testo6";
      return testi[x];
     }
     
@@ -157,7 +163,6 @@
 			<div id="slide">
 			<img id="foto1" src="" />
 			<img id="foto2" src="" />
-			<p></p>
 			</div>
 			<div id="footer"></div>
 		</div>
