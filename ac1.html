@@ -12,13 +12,9 @@
      slideshow(6,2000,10000);     
     });
     
-    /* Argomenti funzione: 
-       n -> il numero totale di foto
-       t1 -> il tempo in millisecondi di transizione
-       t2 -> il tempo in millisecondi di intervallo
-    */
+
     function slideshow(n,t1,t2){
-     /* inizializzo le variabili e gli elementi */
+
      var x = 0;
      var txt = 0;
      var stato = 1;
@@ -30,7 +26,7 @@
      x++;
      $("#foto2").attr("src",fotografie(x,n));
      
-     /* eseguo l'intervallo dello slide */
+
      var intervallo = setInterval(function(){
        x++;txt++;
        if(x>n-1){x=0;}
@@ -42,13 +38,7 @@
     }
     
    
-    /* Argomenti funzione: 
-       x -> la foto che si sta visualizzando 
-       n -> il numero totale di foto
-       stato -> la posizione dello slide
-       t -> il tempo in millisecondi di transizione
-       txt -> il testo che si sta visualizzando
-    */ 
+
     function cambiaSlide(x,n,stato,t,txt){
      if(stato==1){
       var elemento1 = "#foto1";
@@ -72,14 +62,10 @@
     }
     
     
-    /*
-       Argomenti funzione:
-       x -> la foto che si sta visualizzando
-       n -> il numero totale di foto
-    */
+
     function fotografie(x,n){
      var foto = new Array(n);
-     /* scrivere il path ed il nome delle foto che volere usare */
+
      foto[0] = "img/ac1_1.jpg";
      foto[1] = "img/ac1_2.jpg";
      foto[2] = "img/ac1_3.jpg";
@@ -89,14 +75,10 @@
      return foto[x];
     }
     
-    /*
-       Argomenti funzione:
-       x -> la foto che si sta visualizzando
-       n -> il numero totale di foto
-    */
+
     function scritte(x,n){
      var testi = new Array(n);
-     /* scrivere il testo che vuoi far apparire sulle foto */
+
      testi[0] = "testo1";
      testi[1] = "testo2";
      testi[2] = "testo3";
