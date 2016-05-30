@@ -106,6 +106,9 @@ a:visited{color:white; text-decoration:none;}
 	background:#91B3B4;
 	box-shadow:0px 0px 15px black;
 }
+h3 {
+	font-weight: normal;
+}
 #slide{
     /* parametro obbligatorio */
     overflow:hidden;
